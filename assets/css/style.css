@@ -18,7 +18,7 @@
     --green95:#F6FBE9;
     --background:#FAFDF2;
 
-    /* --main-margin: 1vh 20vw; */
+    --main-margin: 0 13vw;
 }
 
 *{
@@ -44,7 +44,7 @@ a{
     color:black;
 }
 
-/* :main stylin                      */
+/* :main styling                     */
 
 /* ? used more than once */
 
@@ -75,16 +75,17 @@ main{
 .main-btn{
     background-color: var(--neon-green);
     color: var(--dark-grey);
-    padding: 1.5vh 3vw;
+    padding: 1.5vh 2vw;
     font-size: 1rem;
     border-radius: 8px;
     border-color:#CBEA7B;
     cursor: pointer;
     display: flex;
+    box-shadow: none;
 }
 
 h2{
-    font-size: 5rem;
+    font-size: 3.5rem;
     
 }
 
@@ -111,7 +112,7 @@ header{
     font-size: 1.2rem;
     line-height: 150%;
     letter-spacing: 1px;
-    padding:0 13vw 0 13vw;
+    padding:0 13vw;
 
     .banner{
         background-color:var(--dark-green20);
@@ -135,7 +136,6 @@ header{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 20vw;
         width: 100%;
 
         .logo-name{
@@ -157,21 +157,22 @@ header{
     display: flex;
     gap: 5.4vh;
     margin-bottom: 15vh;
+    margin-right: 13vw;
 
     .hero-img{
-        max-height: 80vh;
-        min-height: 37vh;
-        background-color: var(--background);
+
+        max-height: 100vh;
+        min-height: 40vh;
     }
 
     .hero-text{
         display: flex;
         flex-direction: column;
-        margin: 12vh 10vw 0 0;
-
+        margin: 12vh 0;
+        width: 100%;
 
         h1{
-            font-size: 5rem;
+            font-size: 4.5rem;
             color: var(--dark-green15);
             margin-bottom: 2vh;
         }
@@ -198,7 +199,7 @@ header{
         }
 
         .happy-img{
-            height: 6.6vh;
+            max-height: 10vh;
         }
 
         .happy-c{
@@ -214,15 +215,15 @@ header{
 /* * section 2: features */         
 
 .features{
-    margin:0 13vw 17vh 13vw;
+    margin: var(--main-margin);
+    margin-bottom: 17vh;
 
     .f-head{
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1vh;
-        margin-bottom: 2vh;
-
+        margin-bottom: 8vh;
     }
 
     .f-grid-sec-head{
@@ -281,7 +282,8 @@ header{
 
 
 .blog{
-    margin:0 13vw 17vh 13vw;
+    margin: var(--main-margin);
+    margin-bottom: 17vh;
 
     p{
         margin-bottom: 8vh;
@@ -366,7 +368,8 @@ header{
 /* * section 4: kcal                                */
 
 .kcl{
-    margin:0 13vw 17vh 13vw;
+    margin: var(--main-margin);
+    margin-bottom: 17vh;
 
     .kcal-head{
         display: flex;
@@ -400,6 +403,14 @@ header{
             }
             .input-4{
                 grid-area: four;
+            }
+
+            .input-4 input::placeholder{
+                font-size:1rem;
+                font-weight: 300;
+                letter-spacing: 0.5px;
+                padding-left: 1vw;
+
             }
 
             .input-1,.input-2,.input-3,.input-4{
@@ -479,7 +490,8 @@ header{
 /* * section 5: pricing                  */
 
 .pricing{
-    margin:0 13vw 17vh 13vw;
+    margin: var(--main-margin);
+    margin-bottom: 17vh;
 
     .price-head{
         display: flex;
@@ -574,7 +586,6 @@ header{
 footer{
     background-color: var(--dark-green20);
     color:var(--white);
-    margin: 13vw 0 0 0;
     display: flex;
     flex-direction: column;
     padding: 3vh 13vw;
@@ -627,3 +638,186 @@ footer{
         }
     }
 }
+
+
+
+/* ! media queries                     */
+
+/* * tablet: */
+@media screen and (max-width: 920px){
+
+    :root{
+    --main-margin: 0 8vw;
+    }
+
+    header{
+        padding: 0 8vw;
+
+    }
+
+    .hero{
+        margin-right: 8vw;
+
+        h4{ font-size: 1.5rem;}
+
+        h1{ font-size: 3rem;}
+
+        p{font-size: 1rem;}
+    }
+
+    .hero-img{
+        height: 110vh;
+    }
+
+    footer{
+        padding: 3vh 8vw;
+    }
+}
+
+
+
+/* * phone */
+
+@media screen and (max-width: 550px) {
+    
+    :root{
+        --main-margin: 0 1.6vw;
+        }
+
+    header{
+
+        padding: 4vh;
+
+        .banner{
+            padding: 6vh;
+            justify-content: flex-center;
+        
+            img{
+            display: none;
+        }
+        }
+
+        .header-nav{
+            nav{
+                display: none;
+            }
+        }
+    }
+
+
+    .hero{
+        display: flex;
+        flex-direction: column;
+        margin-right: 0;
+        
+        .hero-text{
+            align-items: center;
+            text-align: center;
+            margin-right: 1.6vw;
+            margin-left: 1.6vw;
+        }
+    }
+
+    .features{
+
+        .f-head{
+            text-align: center;
+        }
+
+        .f-grid{
+            grid-template-areas: 
+            "one"
+            "two"
+            "three"
+            "four"
+            "five"
+            "six";
+
+            .f-grid_sec1,.f-grid_sec2,.f-grid_sec3,.f-grid_sec4,.f-grid_sec5,.f-grid_sec6{
+                padding: 6vh 6vw;
+            }
+        }
+    }
+    
+    .blog{
+
+        .b-grid{
+            grid-template-areas: 
+            "one"
+            "two"
+            "three"
+            "four";
+
+            .b-container1,.b-container2,.b-container3,.b-container4{
+                padding: 6vh 6vw;
+            }
+        }
+    }
+    
+    .kcl{
+
+        form{
+
+            .user-Input{
+                grid-template-areas: 
+                "one"
+                "two"
+                "three"
+                "four";
+
+                .input-1,.input-2,.input-3,.input-4{
+                    gap:1vh 4vw;
+                }
+            }
+
+            .gender{
+                button{
+                    width:100%;
+                    padding: 3vh;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .pricing{
+        
+        .p-plans{
+            grid-template-areas: 
+            "basic"
+            "prem"
+            "ult";
+
+            .p-option1,.p-option2,.p-option3{
+                padding: 6vh 6vw;
+            }
+        }
+    }
+
+    .f-logo{
+        nav{
+            display: none;
+        }
+    }
+
+    .trademark{
+        flex-direction: column;
+
+        .contact{
+            flex-direction: column;
+            margin-bottom: 5vh;
+            width:100%;
+            padding: 2vh;
+
+            .email, .phone, .location{
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+
+
